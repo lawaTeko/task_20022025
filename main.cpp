@@ -31,7 +31,8 @@ bool pin_user1(int pin) { // English
     }
 }
 
-void tampilanMenu() {
+// untuk tampilan menu dalam bahasa indonesia
+void tampilanMenuBahasaIndonesia() {
     cout << "\n----- MENU -----" << endl;
     cout << "1. Cek Saldo " << endl;
     cout << "2. Tarik Saldo" << endl;
@@ -39,14 +40,24 @@ void tampilanMenu() {
     cout << "----------------" << endl;
 }
 
+// untuk tampilan menu dalam bahasa inggris
+void tampilanMenuBahasaInggris(){
+    cout << "\n----- MENU -----" << endl;
+    cout << "1. Check Balance" << endl;
+    cout << "2. Withdraw Cash" << endl;
+    cout << "3. Exit" << endl;
+    cout << "----------------" << endl;
+}
+
 int main() {
 	
+    // VARIABEL
     int pilihan, opsi, bahasa;
     int saldo = 1000000;
     int pin = 240101115;
     int jumlah = 0;
     
-    
+    // PILIHAN BAHASA - INDONESIA ATAU INGGRIS
     cout << "|--------------------------------|" << endl;
     cout << "|1. Bahasa Indonesia/Indonesian  |" << endl;
     cout << "|2. Bahasa Inggris/English       |"<< endl;
@@ -55,13 +66,11 @@ int main() {
     cin >> bahasa;
 	
 	if (bahasa == 1){ // Bagian Yang Menggunakan Bahasa Indonesia
-		// Verifikasi PIN
-    	if (!pin_user(pin)) {
+    	if (!pin_user(pin)) { // Bagian Verifikasi PIN ATM
         	return 0;
     	}
-
-    	while (true) {
-        	tampilanMenu();
+    	while (true) { // Program Akan Terus Berjalan Selama User Tidak Memilih Menu No 3. Keluar
+        	tampilanMenuBahasaIndonesia();
         	cout << "Pilih Menu : ";
         	cin >> pilihan;
 
@@ -78,7 +87,6 @@ int main() {
             	cout << "--------------------" << endl;
             	cout << "Pilih : ";
             	cin >> opsi; 
-
 
             	if (opsi == 1) {
                 	jumlah = 50000;
@@ -111,19 +119,14 @@ int main() {
             	cout << "Pilihan tidak valid.\n";
         	}
     	}	
-	}else if (bahasa == 2) { // Bagian Yang Menggunakan Bahasa Inggris
 
-    if (!pin_user1(pin)) {
+	}else if (bahasa == 2) { // Bagian Yang Menggunakan Bahasa Inggris
+    if (!pin_user1(pin)) { // Bagian verifikasi PIN ATM
         return 0;
     }
-
     while (true) {
-        // Tampilan Menu dalam Bahasa Inggris
-        cout << "\n----- MENU -----" << endl;
-        cout << "1. Check Balance" << endl;
-        cout << "2. Withdraw Cash" << endl;
-        cout << "3. Exit" << endl;
-        cout << "----------------" << endl;
+
+        tampilanMenuBahasaInggris();
         cout << "Choose Menu : ";
         cin >> pilihan;
 
@@ -173,7 +176,6 @@ int main() {
         }
     }
 }
-	
 
     return 0;
 }
