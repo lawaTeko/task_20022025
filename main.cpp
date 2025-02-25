@@ -55,13 +55,13 @@ int main() {
     cin >> bahasa;
 	
 	if (bahasa == 1){ // Bagian Yang Menggunakan Bahasa Indonesia
-		// Verifikasi PIN
-    	if (!pin_user(pin)) {
+		
+    	if (!pin_user(pin)) { // Verifikasi PIN
         	return 0;
     	}
 
-    	while (true) {
-        	tampilanMenu();
+    	while (true) { // Program akan terus berjalan selama user tidak memilih menu no 3. Keluar
+        	tampilanMenu(); // Tampilan Menu ATM
         	cout << "Pilih Menu : ";
         	cin >> pilihan;
 
