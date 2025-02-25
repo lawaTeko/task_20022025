@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
 bool pin_user(int pin) { // Indonesia
     int input_pin;
     cout << "Masukan PIN ATM Anda : ";
@@ -52,13 +51,13 @@ void tampilanMenuBahasaInggris(){
 
 int main() {
 	
-    // VARIABEL
+    // Variabel
     int pilihan, opsi, bahasa;
     int saldo = 1000000;
     int pin = 123;
     int jumlah = 0;
     
-    // MENU PILIHAN BAHASA - INDONESIA ATAU INGGRIS
+    // Menu pilihan bahasa - Indonesia/Inggris
     cout << "|--------------------------------|" << endl;
     cout << "|1. Bahasa Indonesia/Indonesian  |" << endl;
     cout << "|2. Bahasa Inggris/English       |"<< endl;
