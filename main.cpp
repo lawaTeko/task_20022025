@@ -10,6 +10,7 @@ bool pin_user(int pin) { // Indonesia
     if (input_pin == pin) {
         cout << "PIN Benar. Akses diberikan.\n";
         return true;
+        
     } else {
         cout << "PIN Salah. Akses ditolak.\n";
         return false;
@@ -54,10 +55,10 @@ int main() {
     // VARIABEL
     int pilihan, opsi, bahasa;
     int saldo = 1000000;
-    int pin = 240101115;
+    int pin = 123;
     int jumlah = 0;
     
-    // PILIHAN BAHASA - INDONESIA ATAU INGGRIS
+    // MENU PILIHAN BAHASA - INDONESIA ATAU INGGRIS
     cout << "|--------------------------------|" << endl;
     cout << "|1. Bahasa Indonesia/Indonesian  |" << endl;
     cout << "|2. Bahasa Inggris/English       |"<< endl;
@@ -66,17 +67,20 @@ int main() {
     cin >> bahasa;
 	
 	if (bahasa == 1){ // Bagian Yang Menggunakan Bahasa Indonesia
-    	if (!pin_user(pin)) { // Bagian Verifikasi PIN ATM
+		
+    	if (!pin_user(pin)) { // Verifikasi PIN
         	return 0;
     	}
-    	while (true) { // Program Akan Terus Berjalan Selama User Tidak Memilih Menu No 3. Keluar
+
+    	while (true) {
         	tampilanMenuBahasaIndonesia();
         	cout << "Pilih Menu : ";
         	cin >> pilihan;
 
-        	if (pilihan == 1) { // Bagian Cek Saldo
+        	if (pilihan == 1) { // 1. Bagian Cek Saldo
             	cout << "\nSaldo Anda : Rp. " << saldo << endl;
-        	} else if (pilihan == 2) { // Bagian Tarik Saldo
+
+        	} else if (pilihan == 2) { // 2. Bagian Tarik Saldo
             	cout << "\n--- Tarik Tunai ---" << endl;
             	cout << "1. Rp. 50.000" << endl;
             	cout << "2. Rp. 100.000" << endl;
@@ -112,7 +116,7 @@ int main() {
                 	saldo -= jumlah;
                 	cout << "Penarikan berhasil. Saldo Anda sekarang: Rp. " << saldo << endl;
             	}	
-        	} else if (pilihan == 3) { // Bagian Keluar
+        	} else if (pilihan == 3) { // 3. Bagian Keluar/Exit
             	cout << "Terima kasih telah menggunakan layanan kami.\n";
             	break;
         	} else {
@@ -121,6 +125,7 @@ int main() {
     	}	
 
 	}else if (bahasa == 2) { // Bagian Yang Menggunakan Bahasa Inggris
+
     if (!pin_user1(pin)) { // Bagian verifikasi PIN ATM
         return 0;
     }
@@ -130,9 +135,10 @@ int main() {
         cout << "Choose Menu : ";
         cin >> pilihan;
 
-        if (pilihan == 1) { // Bagian Check Balance 
+        if (pilihan == 1) { // 1. Bagian Check Balance 
             cout << "\nYour Balance : Rp. " << saldo << endl;
-        } else if (pilihan == 2) { // Bagian Withdraw
+
+        } else if (pilihan == 2) { // 2. Bagian Withdraw
             cout << "\n--- Cash Withdrawal ---" << endl;
             cout << "1. Rp. 50.000" << endl;
             cout << "2. Rp. 100.000" << endl;
@@ -168,7 +174,7 @@ int main() {
                 saldo -= jumlah;
                 cout << "Withdrawal successful. Your current balance: Rp. " << saldo << endl;
             }
-        } else if (pilihan == 3) { // Bagian Exit
+        } else if (pilihan == 3) { // 3. Bagian Exit/Keluar
             cout << "Thank you for using our service.\n";
             break;
         } else {
