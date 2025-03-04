@@ -3,7 +3,7 @@ using namespace std;
 
 bool pin_user(int pin) { // Indonesia
     int input_pin;
-    cout << "Masukan PIN ATM Anda : ";
+    cout << "Masukan PIN ATM Anda : "; // masukan PIN
     cin >> input_pin;
     
     if (input_pin == pin) {
